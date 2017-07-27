@@ -1,6 +1,6 @@
 # Plugins
 
-Verdaccio is an plugabble aplication. Currently supports multiple plugins only for [Auhtentification](auth.md) but there are plans to [improve the plugin system](https://github.com/verdaccio/verdaccio/issues/169). If you are intested to develop your own plugin, read the [development](development.md) section.
+Verdaccio is a plugabble aplication. Currently there is only support for [Authentification](auth.md) but there are plans to [improve the plugin system](https://github.com/verdaccio/verdaccio/issues/169). If you are interested in developing your own plugin read the [development](development.md) section.
 
 ## Usage
 
@@ -9,7 +9,7 @@ Verdaccio is an plugabble aplication. Currently supports multiple plugins only f
 ```bash
 $> npm install --global verdaccio-activedirectory
 ```
-`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
+`verdaccio` as a sinopia fork has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such cases the installation is unchanged.
 
 ```
 &> npm install --global sinopia-memory
@@ -19,7 +19,7 @@ $> npm install --global verdaccio-activedirectory
 
 Open the `config.yaml` file and update the `auth` section as follows:
 
-The default configuration looks like this, due we use a build-in `htpasswd` plugin by default that you can disable just commenting out the following lines.
+We use the `htpasswd` plugin by default that you can disable by commenting out the following lines.
 
 ```yaml
  htpasswd:
@@ -29,7 +29,7 @@ The default configuration looks like this, due we use a build-in `htpasswd` plug
     #max_users: 1000
 ```    
 
-and replacing them with (in case you decide to use a `ldap` plugin.
+and replace them with a reference to the `ldap` plugin.
 
 ```yaml
 auth:  
@@ -41,7 +41,7 @@ auth:
 
 ### Multiple Auth plugins
 
-This is tecnically possible, the plugins order becames important, the the credentials will resolved in order.
+This is technically possible, but be aware credentials are authorized in order.
 
 ```yaml
 auth:
@@ -85,4 +85,4 @@ This is a list of plugins compatible with **Verdaccio**.
 
 ## Caveats
 
-Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
+Not all of these plugins are being tested continuously and some might not work at all.  If you have issues please reference the associated plugin support.
